@@ -31,7 +31,7 @@ function Category() {
             Add
           </button>
         </div>
-        <div className="bg-white p-4 mt-4 h-[50%]">
+        <div className="bg-white p-4 mt-4 h-[50%] flex flex-col gap-4">
           <div className="font-extrabold px-4">Categories List</div>
           <div className="flex flex-wrap gap-2">
             {[...Array(8)].map((_, index) => (

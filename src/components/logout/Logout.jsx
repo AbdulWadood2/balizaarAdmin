@@ -47,7 +47,7 @@ const Logout = ({ handleLogout }) => {
           </div>
         </div>
         {/* The message and buttons */}
-        <div className="text-black">Are you sure you want to logout?</div>{" "}
+        <div className="text-black text-center">Are you sure you want to logout?</div>{" "}
         {/* Ensuring text visibility */}
         <div className="flex flex-col w-[70%] gap-4">
           <button
