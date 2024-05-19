@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import blackLogo from "../../assets/nav/black-logo.png";
 // white
 import dashboardWhite from "../../assets/nav/white/dashboard.png";
@@ -8,19 +8,24 @@ import users_white from "../../assets/nav/white/users_white.png";
 // green
 import categoryGreen from "../../assets/nav/green/categoryGreen.png";
 // logout icon
-import logout from "../../assets/nav/logout.png";
+import logoutIcon from "../../assets/nav/logout.png";
+
+// component
+import Logout from "../logout/Logout";
 
 function Navbar() {
+  const [logout, setLogout] = useState(false);
+
+  const handleLogout = () => {
+    setLogout(!logout);
+  }
+
   return (
     <>
       <ul className="fixed h-screen flex flex-col justify-between items-center p-4 bg-[#ffffff] w-[70px]">
         <div className="h-[80%] sm:h-[65%] flex flex-col justify-between items-center">
           <li>
-            <img
-              src={blackLogo}
-              alt="logo"
-              className="w-[60px]"
-            />
+            <img src={blackLogo} alt="logo" className="w-[60px]" />
           </li>
           <li>
             <img src={dashboardWhite} alt="dashboard" className="w-[30px]" />
@@ -38,9 +43,12 @@ function Navbar() {
             <img src={categoryGreen} alt="category" className="w-[30px]" />
           </li>
         </div>
-        <li>
-          <img src={logout} alt="logout" className="w-[50px]" />
+        <li onClick={handleLogout}>
+          <img src={logoutIcon} alt="logout" className="w-[50px]" />
         </li>
+        {logout && (
+          <Logout handleLogout={handleLogout} />
+        )}
       </ul>
     </>
   );
