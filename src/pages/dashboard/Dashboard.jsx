@@ -7,7 +7,7 @@ function Dashboard() {
     <>
       <div className="flex bg-back-color">
         <Navbar />
-        <div className="p-4">
+        <div className="ml-[71px] p-4 h-screen">
           <Outlet />
         </div>
       </div>

@@ -16,7 +16,7 @@ function Category() {
           <input
             type="text"
             placeholder="Add Category"
-            className="p-2 rounded-lg w-96"
+            className="p-2 rounded-lg w-36 sm:w-96"
           />
           {/* file upload  drop box with image icon */}
           <div className="flex justify-center items-center p-2 rounded-lg mt-2 bg-white w-32 h-24 border-dashed border-2">

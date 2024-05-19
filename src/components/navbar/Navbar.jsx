@@ -13,8 +13,8 @@ import logout from "../../assets/nav/logout.png";
 function Navbar() {
   return (
     <>
-      <ul className=" h-screen flex flex-col justify-between items-center p-4 bg-[#ffffff]">
-        <div className=" h-[80%] sm:h-[65%] flex flex-col justify-between items-center">
+      <ul className="fixed h-screen flex flex-col justify-between items-center p-4 bg-[#ffffff] w-[70px]">
+        <div className="h-[80%] sm:h-[65%] flex flex-col justify-between items-center">
           <li>
             <img
               src={blackLogo}

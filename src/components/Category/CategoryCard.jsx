@@ -5,7 +5,7 @@ import threeDots from "../../assets/categories/threeDots.png";
 function CategoryCard({ isOpen, clickDots }) {
   return (
     <>
-      <div className="flex items-center text-[15px] bg-back-color px-2 py-1 w-64 justify-between ">
+      <div className="flex items-center text-[15px] bg-back-color px-2 py-1 w-52 sm:w-64 justify-between ">
         <div className="flex items-center gap-2">
           <img src={laptopscreen} alt="laptopscreen" className="w-6" />
           <div className="ml-2 text-[15px]">Laptop</div>
