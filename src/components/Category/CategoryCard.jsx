@@ -10,7 +10,7 @@ function CategoryCard({ isOpen, clickDots }) {
           <img src={laptopscreen} alt="laptopscreen" className="w-6" />
           <div className="ml-2 text-[15px]">Laptop</div>
         </div>
-        <div className="cursor-pointer px-2" onClick={clickDots}>
+        <div className="relative cursor-pointer px-2" onClick={clickDots}>
           <img src={threeDots} alt="threeDots" className="w-[3px]" />
           {isOpen && (
             <div

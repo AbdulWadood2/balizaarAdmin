@@ -3,9 +3,10 @@ import { createBrowserRouter } from "react-router-dom";
 // auth
 import Login from "../pages/auth/Login";
 // dashboard
-import Dashboard from "../pages/dashboard/Dashboard";
+import Index from "../pages/dashboard/Index";
 // dashboard children
 import Category from "../pages/dashboard/Category";
+import Dashboard from "../pages/dashboard/Dashboard";
 import ErrorPage from "../error-page";
 
 const router = createBrowserRouter([
@@ -13,15 +14,23 @@ const router = createBrowserRouter([
     path: "/",
     element: <Login />,
     errorElement: <ErrorPage />,
+    children: [
+      
+    ]
   },
   {
-    path: "/dashboard",
-    element: <Dashboard />,
+    path: "/",
+    element: <Index />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/dashboard",
+        path: "/category",
         element: <Category />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
         errorElement: <ErrorPage />,
       },
     ],
