@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         "logo-color": "#25f432",
         "back-color": "#f6f6f6",
+        "item-color": "#FFFFFF",
       },
     },
   },

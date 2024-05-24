@@ -34,7 +34,7 @@ function Navbar() {
 
   return (
     <>
-      <ul className="fixed h-screen flex flex-col justify-between items-center p-2 bg-[#ffffff] w-[70px]">
+      <ul className="fixed h-screen flex flex-col justify-between items-center p-2 bg-[#ffffff] w-[60px]">
         <div className="h-[80%] sm:h-[65%] flex flex-col justify-between items-center">
           <li>
             <img src={blackLogo} alt="logo" className="w-[60px]" />
