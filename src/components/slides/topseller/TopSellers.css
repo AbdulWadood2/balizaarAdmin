@@ -1,0 +1,62 @@
+.custom-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: white;
+    background-image: url("./Vector.png");
+    background-repeat: no-repeat;
+    background-size: 7px;
+    background-position: center;
+    color: black;
+    margin-right: 25px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 15px;
+    margin-right: 90px;
+}
+
+/* Explicitly define hover state */
+.custom-arrow:hover {
+    background: white;
+    background-image: url("./Vector.png");
+    background-repeat: no-repeat;
+    background-size: 7px;
+    background-position: center;
+    color: black;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.custom-arrow-prev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: white;
+    background-image: url("./arrow-left-3099.png");
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-position: center;
+    color: black;
+    margin-right: 25px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 50;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 15px;
+    margin-right: 90px;
+}
+
+.custom-arrow-prev:hover{
+    background: white;
+    background-image: url("./arrow-left-3099.png");
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-position: center;
+    color: black;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}

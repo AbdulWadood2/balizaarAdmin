@@ -1,18 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Card from "../../components/Cards/TopSellerCard";
+import Card from "../../Cards/TopSellerCard";
+import "./TopSellers.css"; // Import the CSS file
 
 const TopSellers = ({ cardData }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const CustomNextArrow = (props) => {
+    const { className, onClick, currentSlide, slideCount } = props;
+    return (
+      currentSlide < slideCount - 5 && (
+        <div className={`${className} custom-arrow`} onClick={onClick}></div>
+      )
+    );
+  };
+
+  const PrevCustomarrow = (props) => {
+    const { className, onClick, currentSlide } = props;
+    return (
+      currentSlide > 0 && (
+        <div
+          className={`${className} custom-arrow-prev`}
+          onClick={onClick}
+        ></div>
+      )
+    );
+  };
+
   const settings = {
     dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
-    // hide left arrow only
-    prevArrow: <></>,
+    prevArrow: (
+      <PrevCustomarrow
+        currentSlide={currentSlide}
+        slideCount={cardData.length}
+      />
+    ),
+    nextArrow: (
+      <CustomNextArrow
+        currentSlide={currentSlide}
+        slideCount={cardData.length}
+      />
+    ),
+    afterChange: (current) => setCurrentSlide(current),
     responsive: [
       {
         breakpoint: 1024,

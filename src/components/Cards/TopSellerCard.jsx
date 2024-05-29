@@ -14,7 +14,9 @@ const Card = ({ name, score, profileImage, Emoji }) => {
         </div>
       </div>
       <div className="mt-1">
-        <h2 className="text-[12px] font-semibold">{name}</h2>
+        <h2 className="text-[12px] font-semibold text-nowrap truncate">
+          {name}
+        </h2>
       </div>
       <div className="absolute top-2 right-2 bg-[#029783] text-white rounded px-1 py-1 flex items-center justify-center">
         <span className="font-bold text-[8px]">{score}</span>

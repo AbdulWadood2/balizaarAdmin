@@ -1,21 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import blackLogo from "../../assets/nav/black-logo.png";
-// white
 import dashboardWhite from "../../assets/nav/white/dashboard.png";
 import productWhite from "../../assets/nav/white/productWhite.png";
 import settingsWhite from "../../assets/nav/white/settingsWhite.png";
 import users_white from "../../assets/nav/white/users_white.png";
 import categoryWhite from "../../assets/nav/white/categoryWhite.png";
-// green
 import categoryGreen from "../../assets/nav/green/categoryGreen.png";
 import dashboardGreen from "../../assets/nav/green/dashboardGreen.png";
-// logout icon
 import logoutIcon from "../../assets/nav/logout.png";
-
-import { Link } from "react-router-dom";
-
-// component
 import Logout from "../logout/Logout";
 
 function Navbar() {
@@ -34,7 +27,7 @@ function Navbar() {
 
   return (
     <>
-      <ul className="fixed h-screen flex flex-col justify-between items-center p-2 bg-[#ffffff] w-[60px]">
+      <ul className="fixed h-screen flex flex-col justify-between items-center p-2 bg-[#ffffff] w-[60px] z-[1000]">
         <div className="h-[80%] sm:h-[65%] flex flex-col justify-between items-center">
           <li>
             <img src={blackLogo} alt="logo" className="w-[60px]" />
@@ -106,8 +99,8 @@ function Navbar() {
         <li onClick={handleLogout}>
           <img src={logoutIcon} alt="logout" className="w-[50px]" />
         </li>
-        {logout && <Logout handleLogout={handleLogout} />}
       </ul>
+      {logout && <Logout handleLogout={handleLogout} />}
     </>
   );
 }

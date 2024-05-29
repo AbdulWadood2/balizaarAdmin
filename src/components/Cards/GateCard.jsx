@@ -3,7 +3,7 @@ import greatorThanArrow from "../../assets/icons/greator-than-arrow.png";
 
 function GateCard({ itemQuantity, icon }) {
   return (
-    <div className="flex justify-between bg-item-color p-4 rounded-2xl">
+    <div className="flex justify-between bg-item-color p-4 rounded-2xl w-full">
       <div className="flex flex-col gap-4 w-[160px]">
         <div>Products</div>
         <div className="flex items-center justify-between w-full">

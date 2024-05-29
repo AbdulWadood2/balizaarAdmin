@@ -5,56 +5,30 @@ const Logout = ({ handleLogout }) => {
   const ShutDown = () => {
     handleLogout();
   };
+
   return (
-    <div
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        zIndex: 9999,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-      }}
-      className="w-full h-screen m-auto"
-    >
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-50">
       <div
-        className="flex flex-col items-center w-96 bg-white gap-10 rounded-3xl relative"
-        style={{ padding: "50px 0" }} // Added padding to accommodate the icon
+        className="relative flex flex-col items-center w-96 bg-white gap-10 rounded-3xl"
+        style={{ padding: "50px 0" }}
       >
         {/* The div for the icon */}
-        <div
-          className="absolute top-0 left-0 right-0 bg-white h-[50px] rounded-3xl"
-          style={{ zIndex: 1 }} // Ensure the icon is above the background
-        >
+        <div className="absolute top-0 left-0 right-0 bg-white h-[50px] rounded-3xl">
           {/* Half of the icon placed outside */}
-          <div
-            style={{
-              position: "absolute",
-              top: "-25px",
-              left: "50%",
-              transform: "translateX(-50%)",
-            }}
-          >
-            <img
-              src={logoutWarning}
-              alt="logoutWarning"
-              className="text-[50px] text-red-600 w-16"
-            />
+          <div className="absolute top-[-25px] left-1/2 transform -translate-x-1/2">
+            <img src={logoutWarning} alt="logoutWarning" className="w-16" />
           </div>
         </div>
         {/* The message and buttons */}
-        <div className="text-black text-center">Are you sure you want to logout?</div>{" "}
-        {/* Ensuring text visibility */}
+        <div className="text-black text-center">
+          Are you sure you want to logout?
+        </div>
         <div className="flex flex-col w-[70%] gap-4">
           <button
             onClick={ShutDown}
             className="bg-[#029783] text-white px-4 py-2 rounded-lg"
           >
-            N0
+            NO
           </button>
           <button
             onClick={() => {
