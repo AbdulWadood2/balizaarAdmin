@@ -27,8 +27,8 @@ function Navbar() {
 
   return (
     <>
-      <ul className="fixed h-screen flex flex-col justify-between items-center p-2 bg-[#ffffff] w-[60px] z-[1000]">
-        <div className="h-[80%] sm:h-[65%] flex flex-col justify-between items-center">
+      <ul className="fixed h-screen flex flex-col sm:justify-between items-center p-2 bg-[#ffffff] w-[60px] z-[1000]">
+        <div className="h-[80%] gap-6 sm:h-[65%] flex flex-col sm:justify-between items-center">
           <li>
             <img src={blackLogo} alt="logo" className="w-[60px]" />
           </li>
@@ -95,8 +95,11 @@ function Navbar() {
               </div>
             )}
           </Link>
+          <li onClick={handleLogout} className="block sm:hidden">
+            <img src={logoutIcon} alt="logout" className="w-[50px]" />
+          </li>
         </div>
-        <li onClick={handleLogout}>
+        <li onClick={handleLogout} className="hidden sm:block">
           <img src={logoutIcon} alt="logout" className="w-[50px]" />
         </li>
       </ul>

@@ -9,6 +9,13 @@ module.exports = {
         "item-color": "#FFFFFF",
       },
     },
+    screens: {
+      sm: "640px",
+      "sm-1": "410px",
+      "sm-2": "306px",
+      md: "768px",
+      lg: "1024px",
+    },
   },
   plugins: [],
 };

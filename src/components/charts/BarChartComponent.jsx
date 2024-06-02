@@ -25,8 +25,9 @@ const data = [
   { name: "Dec", earnings: 30000 },
 ];
 
-const EarningsChart = () => {
+const EarningsChart = ({ barSize }) => {
   const [activeButton, setActiveButton] = useState("Yearly");
+  // const [barSize, setBarSize] = useState(2000000);
 
   // Find the indices of the top two earnings
   const topTwoIndices = [...data]
@@ -47,44 +48,70 @@ const EarningsChart = () => {
     return `$${tickItem / 1000}k`;
   };
 
+  // Adjust bar size based on window size
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     const chartWidth = document.getElementById("chartContainer").offsetWidth;
+  //     setBarSize(chartWidth / (data.length * 2));
+  //   };
+  //   window.addEventListener("resize", handleResize);
+  //   handleResize(); // Initial call to set the bar size
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
+
   return (
-    <div className="p-4 bg-white rounded-3xl shadow-md font-bold">
-      <div className="flex justify-end mb-4">
-        {["Weekly", "Monthly", "Yearly"].map((period) => (
-          <button
-            key={period}
-            onClick={() => setActiveButton(period)}
-            className={`px-4 py-2 mr-2 text-sm rounded ${
-              activeButton === period
-                ? "bg-[#029783] text-white"
-                : "bg-gray-200 text-gray-600"
-            }`}
-          >
-            {period}
-          </button>
-        ))}
+    <>
+      <div className="sm:pt-4  bg-white rounded-3xl shadow-md font-bold w-full">
+        <div className="flex justify-end mb-4">
+          {["Weekly", "Monthly", "Yearly"].map((period) => (
+            <button
+              key={period}
+              onClick={() => setActiveButton(period)}
+              className={`px-2 sm:px-4 py-1 sm:py-2 mr-2 text-[8px] sm:text-sm rounded ${
+                activeButton === period
+                  ? "bg-[#029783] text-white"
+                  : "bg-gray-200 text-gray-600"
+              }`}
+            >
+              {period}
+            </button>
+          ))}
+        </div>
+        <div id="chartContainer" className="w-full h-24 sm:h-48">
+          <ResponsiveContainer>
+            <BarChart
+              data={data}
+              margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+            >
+              <XAxis
+                dataKey="name"
+                tickLine={false}
+                className="text-[10px] w-0 sm:text-[18px]"
+              />
+              <YAxis
+                tickFormatter={formatYAxis}
+                tickLine={false}
+                className="text-[10px] sm:text-[18px]"
+              />
+              <Tooltip
+                wrapperStyle={{ outline: "none" }}
+                contentStyle={{
+                  backgroundColor: "#f5f5f5",
+                  borderRadius: "5px",
+                }}
+                cursor={{ fill: "rgba(0, 0, 0, 0.1)" }}
+                className="custom-tooltip"
+              />
+              <Bar dataKey="earnings" barSize={barSize}>
+                {data.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={getBarColor(index)} />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
       </div>
-      <ResponsiveContainer width="100%" height={300}>
-        <BarChart
-          data={data}
-          margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-        >
-          <XAxis dataKey="name" />
-          <YAxis tickFormatter={formatYAxis} />
-          <Tooltip
-            wrapperStyle={{ outline: "none" }}
-            contentStyle={{ backgroundColor: "#f5f5f5", borderRadius: "5px" }}
-            cursor={{ fill: "rgba(0, 0, 0, 0.1)" }}
-            className="custom-tooltip"
-          />
-          <Bar dataKey="earnings" barSize={20}>
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={getBarColor(index)} />
-            ))}
-          </Bar>
-        </BarChart>
-      </ResponsiveContainer>
-    </div>
+    </>
   );
 };
 

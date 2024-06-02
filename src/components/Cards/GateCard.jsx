@@ -3,13 +3,15 @@ import greatorThanArrow from "../../assets/icons/greator-than-arrow.png";
 
 function GateCard({ itemQuantity, icon }) {
   return (
-    <div className="flex justify-between bg-item-color p-4 rounded-2xl w-full">
-      <div className="flex flex-col gap-4 w-[160px]">
-        <div>Products</div>
+    <div className="flex justify-between bg-item-color p-1 px-2 sm:p-4 rounded-2xl w-full">
+      <div className="flex flex-col gap-4 sm:w-full">
+        <div className="text-[10px] sm-1:text-2xl">Products</div>
         <div className="flex items-center justify-between w-full">
-          <img src={icon} alt="products" className="w-16" />
+          <img src={icon} alt="products" className="w-8 sm-1:w-10 sm:w-16" />
 
-          <div className="text-3xl font-md">{itemQuantity}</div>
+          <div className="text-[10px] sm-1:text-[20px] md:text-[30px] font-md ml-3">
+            {itemQuantity}
+          </div>
         </div>
       </div>
       <div>
@@ -17,7 +19,7 @@ function GateCard({ itemQuantity, icon }) {
           <img
             src={greatorThanArrow}
             alt="greatorThanArrow"
-            className="w-[4px]"
+            className="w-[4px] sm-2:w-[5px] sm-1:w-[4px]"
           />
         </div>
       </div>

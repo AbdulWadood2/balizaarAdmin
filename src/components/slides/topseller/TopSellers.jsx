@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -7,9 +7,29 @@ import "./TopSellers.css"; // Import the CSS file
 
 const TopSellers = ({ cardData }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  // Hook to update window width
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 640);
+    };
+
+    // Initialize the state based on current window size
+    handleResize();
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const CustomNextArrow = (props) => {
     const { className, onClick, currentSlide, slideCount } = props;
+    if (isSmallScreen) return <></>;
     return (
       currentSlide < slideCount - 5 && (
         <div className={`${className} custom-arrow`} onClick={onClick}></div>
@@ -19,6 +39,7 @@ const TopSellers = ({ cardData }) => {
 
   const PrevCustomarrow = (props) => {
     const { className, onClick, currentSlide } = props;
+    if (isSmallScreen) return <></>;
     return (
       currentSlide > 0 && (
         <div
@@ -55,32 +76,26 @@ const TopSellers = ({ cardData }) => {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          initialSlide: 1,
         },
       },
     ],
+    cssEase: "linear", // Optionally add this if you want a linear transition
   };
 
   return (
-    <div className="p-4 bg-white rounded-lg shadow-md">
+    <div className="sm:p-2 bg-white rounded-lg shadow-md">
       <Slider {...settings}>
         {cardData.map((data, index) => (
-          <div key={index} className="p-2">
+          <div key={index} className="p-1">
             <Card
               name={data.name}
               score={data.score}
