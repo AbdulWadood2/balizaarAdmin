@@ -58,7 +58,7 @@ function Dashboard() {
           <GateCard itemQuantity={"7.82k"} icon={productBox} />
           <GateCard itemQuantity={"7.82k"} icon={usersGateIcon} />
         </div>
-        <Link >
+        <Link to="/dashboard/allBanners">
           <Banner />
         </Link>
         <div>

@@ -32,9 +32,9 @@ function Navbar() {
           <li>
             <img src={blackLogo} alt="logo" className="w-[60px]" />
           </li>
-          <Link to="/dashboard">
-            <div id="/dashboard">
-              {currentNav !== "/dashboard" && (
+          <Link to="/dashboard/main">
+            <div id="/dashboard/main">
+              {currentNav !== "/dashboard/main" && (
                 <div className="p-2 rounded-lg">
                   <img
                     src={dashboardWhite}
@@ -43,7 +43,7 @@ function Navbar() {
                   />
                 </div>
               )}
-              {currentNav === "/dashboard" && (
+              {currentNav === "/dashboard/main" && (
                 <div className="bg-slate-100 p-2 rounded-lg">
                   <img
                     src={dashboardGreen}

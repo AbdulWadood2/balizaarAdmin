@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import camera from "../../assets/categories/camera.png";
-import CategoryCard from "../../components/Category/CategoryCard";
+import camera from "../assets/categories/camera.png";
+import CategoryCard from "../components/Category/CategoryCard";
 
 function Category() {
   const [openIndex, setOpenIndex] = useState(null);

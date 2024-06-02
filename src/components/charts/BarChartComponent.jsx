@@ -61,7 +61,7 @@ const EarningsChart = ({ barSize }) => {
 
   return (
     <>
-      <div className="sm:pt-4  bg-white rounded-3xl shadow-md font-bold w-full">
+      <div className="pt-4  bg-white rounded-3xl shadow-md font-bold w-full">
         <div className="flex justify-end mb-4">
           {["Weekly", "Monthly", "Yearly"].map((period) => (
             <button
@@ -77,7 +77,7 @@ const EarningsChart = ({ barSize }) => {
             </button>
           ))}
         </div>
-        <div id="chartContainer" className="w-full h-24 sm:h-48">
+        <div id="chartContainer" className="w-full h-28 sm:h-48">
           <ResponsiveContainer>
             <BarChart
               data={data}

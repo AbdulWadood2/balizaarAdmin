@@ -3,20 +3,20 @@ import { createBrowserRouter } from "react-router-dom";
 // auth
 import Login from "../pages/auth/Login";
 // dashboard
-import Index from "../pages/dashboard/Index";
+import Index from "../pages/Index";
 // dashboard children
-import Category from "../pages/dashboard/Category";
+import Category from "../../src/pages/Category.jsx";
 import Dashboard from "../pages/dashboard/Dashboard";
+import DashboardIndex from "../pages/dashboard/DashboardIndex";
 import ErrorPage from "../error-page";
+import AllBannerPage from "../components/banner/AllBannerPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Login />,
     errorElement: <ErrorPage />,
-    children: [
-      
-    ]
+    children: [],
   },
   {
     path: "/",
@@ -30,8 +30,20 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        element: <Dashboard />,
+        element: <DashboardIndex />,
         errorElement: <ErrorPage />,
+        children: [
+          {
+            path: "/dashboard/main",
+            element: <Dashboard />,
+            errorElement: <ErrorPage />,
+          },
+          {
+            path: "/dashboard/allBanners",
+            element: <AllBannerPage />,
+            errorElement: <ErrorPage />,
+          },
+        ],
       },
     ],
   },
