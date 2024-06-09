@@ -35,7 +35,7 @@ function Login() {
           </div>
           <button
             className="bg-[#029783] text-white px-4 py-2 rounded-2xl w-[50%]"
-            onClick={() => navigate("/dashboard")}
+            onClick={() => navigate("/dashboard/main")}
           >
             LOGIN
           </button>

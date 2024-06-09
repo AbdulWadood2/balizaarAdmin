@@ -7,6 +7,7 @@ module.exports = {
         "logo-color": "#25f432",
         "back-color": "#f6f6f6",
         "item-color": "#FFFFFF",
+        "ui-color": "#3cac9d",
       },
     },
     screens: {

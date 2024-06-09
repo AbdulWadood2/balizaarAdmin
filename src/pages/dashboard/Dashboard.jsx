@@ -99,9 +99,9 @@ function Dashboard() {
             </div>
           </div>
           <div className="flex flex-col gap-6 col-span-4">
-            <div>
+            <Link to="/dashboard/allBanners">
               <Banner />
-            </div>
+            </Link>
             <div>
               <h1 className="text-2xl font-medium">Top Selling Products</h1>
               <div className="bg-white h-[calc(100vh-10rem)] rounded-2xl p-4 flex overflow-scroll hide-scrollbar">
