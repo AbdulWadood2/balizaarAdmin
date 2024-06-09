@@ -61,7 +61,7 @@ function Dashboard() {
         <Link to="/dashboard/allBanners">
           <Banner />
         </Link>
-        <div>
+        <div className="w-full">
           <h2 className="text-[15px] sm:text-2xl font-medium p-2">Earnings</h2>
           <BarChartComponent barSize={5} />
         </div>
@@ -95,7 +95,7 @@ function Dashboard() {
             </div>
             <div className="mt-6">
               <h2 className="text-lg font-medium mb-4">Earnings</h2>
-              <BarChartComponent barSize={12} />
+              <BarChartComponent />
             </div>
           </div>
           <div className="flex flex-col gap-6 col-span-4">
