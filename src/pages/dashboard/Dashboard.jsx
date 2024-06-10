@@ -55,8 +55,8 @@ function Dashboard() {
           <h1 className="text-xl sm:text-2xl font-medium mb-3">Dashboard</h1>
         </div>
         <div className="flex gap-6 flex-col sm-2:flex-row">
-          <GateCard itemQuantity={"7.82k"} icon={productBox} />
-          <GateCard itemQuantity={"7.82k"} icon={usersGateIcon} />
+          <GateCard itemQuantity={"7.82k"} icon={productBox} title={"Products"} />
+          <GateCard itemQuantity={"7.82k"} icon={usersGateIcon} title={"Users"} />
         </div>
         <Link to="/dashboard/allBanners">
           <Banner />
@@ -86,8 +86,8 @@ function Dashboard() {
           <div className="col-span-6">
             <h1 className="text-2xl font-medium">Good Morning Buddy!</h1>
             <div className="flex gap-6 mt-4">
-              <GateCard itemQuantity={"7.82k"} icon={productBox} />
-              <GateCard itemQuantity={"7.82k"} icon={usersGateIcon} />
+              <GateCard itemQuantity={"7.82k"} icon={productBox} title={"Products"} />
+              <GateCard itemQuantity={"7.82k"} icon={usersGateIcon} title={"Users"} />
             </div>
             <div className="mt-6">
               <h1 className="text-2xl font-medium">Top Sellers</h1>
