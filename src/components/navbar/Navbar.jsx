@@ -3,6 +3,7 @@ import { useLocation, Link } from "react-router-dom";
 import blackLogo from "../../assets/nav/black-logo.png";
 import dashboardWhite from "../../assets/nav/white/dashboard.png";
 import productWhite from "../../assets/nav/white/productWhite.png";
+import productGreen from "../../assets/nav/green/productGreen.png";
 import settingsWhite from "../../assets/nav/white/settingsWhite.png";
 import users_white from "../../assets/nav/white/users_white.png";
 import categoryWhite from "../../assets/nav/white/categoryWhite.png";
@@ -29,7 +30,7 @@ function Navbar() {
     <>
       <ul className="fixed h-screen flex flex-col sm:justify-between items-center p-2 bg-[#ffffff] w-[60px] z-[1000]">
         <div className="h-[80%] gap-6 sm:h-[65%] flex flex-col sm:justify-between items-center">
-          <li>
+          <li className="mb-4">
             <img src={blackLogo} alt="logo" className="w-[60px]" />
           </li>
           <Link to="/dashboard/main">
@@ -54,13 +55,26 @@ function Navbar() {
               )}
             </div>
           </Link>
-          <li>
-            <img
-              src={productWhite}
-              alt="product"
-              className="w-[30px] cursor-pointer"
-            />
-          </li>
+          <Link to="/allProducts">
+            {currentNav === "/allProducts" && (
+              <li>
+                <img
+                  src={productGreen}
+                  alt="product"
+                  className="w-[30px] cursor-pointer"
+                />
+              </li>
+            )}
+            {currentNav !== "/allProducts" && (
+              <li>
+                <img
+                  src={productWhite}
+                  alt="product"
+                  className="w-[30px] cursor-pointer"
+                />
+              </li>
+            )}
+          </Link>
           <li>
             <img
               src={users_white}

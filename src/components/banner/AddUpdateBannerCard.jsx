@@ -7,12 +7,14 @@ function AddUpdateBannerCard({ title, buttonTitle, setShowModel }) {
   return (
     <div className="flex flex-col bg-white p-6 rounded-2xl w-[90%] sm:w-1/2 justify-center">
       <div className="flex items-center gap-4 mb-2">
-        <div className="bg-slate-100 p-2 rounded">
+        <div
+          className="bg-slate-100 p-2 rounded cursor-pointer"
+          onClick={() => setShowModel(false)}
+        >
           <img
             src={less_than_arrow}
             alt="less than arrow"
             className="w-[4px]"
-            onClick={() => setShowModel(false)}
           />
         </div>
         <div className="text-[14px]">{title}</div>

@@ -10,6 +10,7 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import DashboardIndex from "../pages/dashboard/DashboardIndex";
 import ErrorPage from "../error-page";
 import AllBannerPage from "../components/banner/AllBannerPage";
+import AllProducts from "../pages/AllProducts.jsx";
 
 const router = createBrowserRouter([
   {
@@ -45,7 +46,16 @@ const router = createBrowserRouter([
           },
         ],
       },
+      {
+        path: "/allProducts",
+        element: <AllProducts />,
+        errorElement: <ErrorPage />,
+      },
     ],
+  },
+  {
+    path: "*",
+    element: <ErrorPage />,
   },
 ]);
 
