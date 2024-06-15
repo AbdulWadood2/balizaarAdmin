@@ -35,16 +35,18 @@ function Navbar() {
           </li>
           <Link to="/dashboard/main">
             <div id="/dashboard/main">
-              {currentNav !== "/dashboard/main" && (
-                <div className="p-2 rounded-lg">
-                  <img
-                    src={dashboardWhite}
-                    alt="dashboard"
-                    className="w-[30px]"
-                  />
-                </div>
-              )}
-              {currentNav === "/dashboard/main" && (
+              {currentNav !== "/dashboard/main" &&
+                currentNav !== "/dashboard/allBanners" && (
+                  <div className="p-2 rounded-lg">
+                    <img
+                      src={dashboardWhite}
+                      alt="dashboard"
+                      className="w-[30px]"
+                    />
+                  </div>
+                )}
+              {(currentNav === "/dashboard/main" ||
+                currentNav === "/dashboard/allBanners") && (
                 <div className="bg-slate-100 p-2 rounded-lg">
                   <img
                     src={dashboardGreen}
@@ -57,7 +59,7 @@ function Navbar() {
           </Link>
           <Link to="/allProducts">
             {currentNav === "/allProducts" && (
-              <li>
+              <li className="bg-slate-100 p-2 rounded-lg">
                 <img
                   src={productGreen}
                   alt="product"

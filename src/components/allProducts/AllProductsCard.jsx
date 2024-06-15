@@ -11,7 +11,7 @@ const ItemCard = ({ image, title, location, description, rating }) => {
         </div>
         <p className="text-gray-500 items-center ml-[20%] text-[14px] sm:text-sm">{location}</p>
         <div className="flex justify-between items-center mt-2">
-          <p className="text-[12px] sm:text-sm text-gray-700  line-clamp-3">{description}</p>
+          <p className="text-[10px] sm:text-[12px] text-gray-700  line-clamp-3">{description}</p>
         </div>
       </div>
     </div>

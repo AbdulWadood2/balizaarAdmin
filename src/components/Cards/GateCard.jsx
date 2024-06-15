@@ -1,7 +1,8 @@
 import React from "react";
 import greatorThanArrow from "../../assets/icons/greator-than-arrow.png";
+import { Link } from "react-router-dom";
 
-function GateCard({ itemQuantity, icon,title }) {
+function GateCard({ itemQuantity, icon, title, link }) {
   return (
     <div className="flex justify-between bg-item-color p-1 px-2 sm:p-4 rounded-2xl w-full">
       <div className="flex flex-col gap-4 sm:w-full">
@@ -15,13 +16,15 @@ function GateCard({ itemQuantity, icon,title }) {
         </div>
       </div>
       <div>
-        <div className="bg-slate-100 p-[5px] rounded">
-          <img
-            src={greatorThanArrow}
-            alt="greatorThanArrow"
-            className="w-[4px] sm-2:w-[5px] sm-1:w-[4px]"
-          />
-        </div>
+        <Link to={link}>
+          <div className="bg-slate-100 p-[5px] rounded">
+            <img
+              src={greatorThanArrow}
+              alt="greatorThanArrow"
+              className="w-[4px] sm-2:w-[5px] sm-1:w-[4px]"
+            />
+          </div>
+        </Link>
       </div>
     </div>
   );

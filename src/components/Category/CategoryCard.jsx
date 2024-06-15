@@ -1,8 +1,14 @@
 import React from "react";
 import laptopscreen from "../../assets/categories/laptop-screen.png";
 import threeDots from "../../assets/categories/threeDots.png";
+import Modal from "../Model/Model";
+import EditCategoryCard from "./EditCategoryCard";
 
 function CategoryCard({ isOpen, clickDots }) {
+  const [editMode, setEditMode] = React.useState(false);
+  const editClick = () => {
+    setEditMode(!editMode);
+  };
   return (
     <>
       <div className="flex items-center text-[15px] bg-back-color px-2 py-1 max-[352px]:w-40 min-[352px]:w-52 sm:w-64 justify-between ">
@@ -18,13 +24,23 @@ function CategoryCard({ isOpen, clickDots }) {
        border rounded-bl-3xl rounded-br-3xl rounded-tl-3xl
        shadow-lg py-1 z-10 mr-4 overflow-hidden"
             >
-              <p className="cursor-pointer px-4 py-1 hover:bg-gray-200">Edit</p>
+              <p
+                className="cursor-pointer px-4 py-1 hover:bg-gray-200"
+                onClick={editClick}
+              >
+                Edit
+              </p>
               <p className="cursor-pointer px-4 py-1 hover:bg-gray-200">
                 Delete
               </p>
             </div>
           )}
         </div>
+        {editMode && (
+          <Modal>
+            <EditCategoryCard onClick={editClick} />
+          </Modal>
+        )}
       </div>
     </>
   );

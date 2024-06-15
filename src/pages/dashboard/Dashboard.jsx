@@ -59,6 +59,7 @@ function Dashboard() {
             itemQuantity={"7.82k"}
             icon={productBox}
             title={"Products"}
+            link={"/allProducts"}
           />
           <GateCard
             itemQuantity={"7.82k"}
@@ -98,6 +99,7 @@ function Dashboard() {
                 itemQuantity={"7.82k"}
                 icon={productBox}
                 title={"Products"}
+                link={"/allProducts"}
               />
               <GateCard
                 itemQuantity={"7.82k"}
