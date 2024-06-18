@@ -6,6 +6,7 @@ import productWhite from "../../assets/nav/white/productWhite.png";
 import productGreen from "../../assets/nav/green/productGreen.png";
 import settingsWhite from "../../assets/nav/white/settingsWhite.png";
 import users_white from "../../assets/nav/white/users_white.png";
+import usersGreen from "../../assets/nav/green/usersGreen.png";
 import categoryWhite from "../../assets/nav/white/categoryWhite.png";
 import categoryGreen from "../../assets/nav/green/categoryGreen.png";
 import dashboardGreen from "../../assets/nav/green/dashboardGreen.png";
@@ -77,13 +78,25 @@ function Navbar() {
               </li>
             )}
           </Link>
-          <li>
-            <img
-              src={users_white}
-              alt="users"
-              className="w-[30px] cursor-pointer"
-            />
-          </li>
+          <Link to="/users">
+            {currentNav !== "/users" && (
+              <li>
+                <img
+                  src={users_white}
+                  alt="users"
+                  className="w-[30px] cursor-pointer"
+                />
+              </li>)}
+            {currentNav === "/users" && (
+              <li>
+                <img
+                  src={usersGreen}
+                  alt="users"
+                  className="w-[30px] cursor-pointer"
+                />
+              </li>
+            )}
+          </Link>
           <li>
             <img
               src={settingsWhite}

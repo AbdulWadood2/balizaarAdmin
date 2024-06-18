@@ -11,6 +11,7 @@ import DashboardIndex from "../pages/dashboard/DashboardIndex";
 import ErrorPage from "../error-page";
 import AllBannerPage from "../components/banner/AllBannerPage";
 import AllProducts from "../pages/AllProducts.jsx";
+import Users from "../pages/users/Users.jsx";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
         element: <AllProducts />,
         errorElement: <ErrorPage />,
       },
+      {
+        path: "/users",
+        element: <Users />,
+        errorElement: <ErrorPage />,
+      }
     ],
   },
   {

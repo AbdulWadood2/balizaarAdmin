@@ -30,7 +30,7 @@ function Banner() {
   return (
     <div>
       <div
-        className=" text-[15px] sm:text-2xl font-medium"
+        className=" text-[15px] sm:text-2xl font-medium pb-1"
       >
         Add Banner
       </div>

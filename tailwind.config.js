@@ -8,6 +8,7 @@ module.exports = {
         "back-color": "#f6f6f6",
         "item-color": "#FFFFFF",
         "ui-color": "#3cac9d",
+        "button-green": "#029783",
       },
     },
     screens: {

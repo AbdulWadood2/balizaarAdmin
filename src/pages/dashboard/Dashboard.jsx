@@ -116,7 +116,7 @@ function Dashboard() {
               <BarChartComponent />
             </div>
           </div>
-          <div className="flex flex-col gap-6 col-span-4">
+          <div className="flex flex-col gap-6 col-span-4 py-4">
             <Link to="/dashboard/allBanners">
               <Banner />
             </Link>
