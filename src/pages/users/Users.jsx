@@ -42,12 +42,12 @@ const UserListing = () => {
   const [blockPage, setBlockPage] = useState(false);
 
   return (
-    <div className="p-1">
-      <div className="flex justify-between items-center mb-4 px-[10px]">
-        <h1 className="text-2xl font-medium">Users</h1>
-        <div className="flex gap-4">
+    <div className="sm:p-1">
+      <div className="flex justify-between items-center mb-4 px-4 md:px-2">
+        <h1 className="text-xl md:text-2xl font-medium mb-2 sm:mb-0">Users</h1>
+        <div className="flex gap-2 sm:gap-4 text-[10px] sm:text-xl">
           <button
-            className={`px-[26px] py-1 rounded-xl ${
+            className={`px-4 py-1 rounded-xl ${
               blockPage
                 ? "bg-gray-200 text-gray-700"
                 : "bg-button-green text-white"
@@ -57,7 +57,7 @@ const UserListing = () => {
             Active
           </button>
           <button
-            className={`px-[26px] py-1 rounded-xl ${
+            className={`px-4 py-1 rounded-xl ${
               blockPage
                 ? "bg-button-green text-white"
                 : "bg-gray-200 text-gray-700"
@@ -69,7 +69,7 @@ const UserListing = () => {
         </div>
       </div>
       <div
-        className="p-4 bg-white rounded-xl"
+        className="p-4 bg-white rounded-xl overflow-x-auto"
         style={{ minHeight: "calc(100vh - 90px)" }}
       >
         <table className="min-w-full border-gray-200">
@@ -97,40 +97,48 @@ const UserListing = () => {
               ) {
                 return (
                   <tr key={user.id} className="hover:bg-gray-50">
-                    <td className="pr-4 border-b text-left">
+                    <td className="pr-2 sm:pr-4 border-b text-left">
                       <img
                         src={user.image}
                         alt={user.name}
-                        className="w-10 h-10 rounded-full mx-auto"
+                        className="w-8 h-8 sm:w-10 sm:h-10 rounded-full mx-auto"
                       />
                     </td>
-                    <td className="pr-4 border-b text-left">{user.name}</td>
-                    <td className="pr-4 border-b text-left">{user.email}</td>
-                    <td className="pr-4 border-b text-left">{user.phone}</td>
-                    <td className="pr-4 border-b text-left">{user.location}</td>
-                    <td className="pr-[25px] border-b text-left">
-                      <div className="bg-button-green text-white rounded-[7px] inline-block px-4">
+                    <td className="pr-2 sm:pr-4 border-b text-left">
+                      {user.name}
+                    </td>
+                    <td className="pr-2 sm:pr-4 border-b text-left">
+                      {user.email}
+                    </td>
+                    <td className="pr-2 sm:pr-4 border-b text-left">
+                      {user.phone}
+                    </td>
+                    <td className="pr-2 sm:pr-4 border-b text-left">
+                      {user.location}
+                    </td>
+                    <td className="pr-2 sm:pr-4 border-b text-left">
+                      <div className="bg-button-green text-white rounded-lg inline-block px-4">
                         {user.listings}
                       </div>
                     </td>
-                    <td className="py-6 pr-4 border-b text-left flex justify-between">
-                      <div className="flex justify-center items-center">
+                    <td className="py-6 pr-2 sm:pr-4 border-b text-left flex flex-col sm:flex-row justify-between items-center">
+                      <div className="flex justify-center items-center mb-2 sm:mb-0">
                         <img
                           src={user.isBlocked ? greenTick : greyTick}
                           alt={user.isBlocked ? "greenTick" : "greyTick"}
-                          className={`mr-2 p-[7px] rounded-full ${
+                          className={`mr-2 p-1 sm:p-[7px] rounded-full ${
                             user.isBlocked ? "bg-[#e7fae3]" : "bg-[#E3E3E3]"
                           }`}
                         />
                         <img
                           src={user.isBlocked ? greyCross : redCross}
                           alt={user.isBlocked ? "greyCross" : "redCross"}
-                          className={`mr-2 p-[7px] rounded-full ${
+                          className={`mr-2 p-1 sm:p-[7px] rounded-full ${
                             user.isBlocked ? "bg-[#e3e3e3]" : "bg-[#ffecec]"
                           }`}
                         />
                       </div>
-                      <button className="px-[10px] py-[0.5px] border-[1px] text-[11px] border-[#5dbbae] bg-[#F6F6F6] text-[#5dbbae] rounded-lg">
+                      <button className="px-2 py-1 border border-[#5dbbae] bg-[#F6F6F6] text-[#5dbbae] rounded-lg text-xs sm:text-sm">
                         View Details
                       </button>
                     </td>
